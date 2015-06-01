@@ -38,10 +38,15 @@ PS: You can either keep, or replace the default access log org.apache.catalina.v
 
 An example of a request logged with influxdb-tomcat-accesslog:
 
-|time|sequence_number|method|status|referer|userAgent|remoteHost|bytes|virtualHost|userName|query|
+|time|sequence_number|remoteHost|status|referer|userAgent|remoteHost|bytes|virtualHost|userName|query|
 |----|---------------|------|------|-------|---------|----------|-----|-----------|--------|-----|
 |1433179304218|155440001|GET|200|http://localhost:8080/docs/security-howto.html|Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0|127.0.0.1|8218|localhost||/docs/maven-jars.html|
 
+|time|sequence_number|remoteHost|userName|query|bytes|virtualHost|status|method|referer|userAgent|
+|----|---------------|----------|--------|-----|-----|-----------|------|------|-------|---------|
+|1433192553974|155500001|127.0.0.1||/docs/images/asf-feather.png|0|localhost|304|GET|http://localhost:8080/docs/security-howto.html|Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0|
+|1433192553963|155490001|127.0.0.1||/docs/images/tomcat.png|0|localhost|304|GET|http://localhost:8080/docs/security-howto.html|Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0|
+|1433192553946|155480001|127.0.0.1||/docs/images/fonts/fonts.css|0|localhost|304|GET|http://localhost:8080/docs/images/docs-stylesheet.css|Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0|
 
 ### Build
 
@@ -60,5 +65,5 @@ After the build is done, drop the following jars inside TOMCAT_HOME/lib folder:
 - gson-2.3.jar
 - okio-1.0.0.jar
 - influxdb-java-1.5.jar
-- 
+
 This implementation is still on early development days and hasn't been published yet to any public maven repository.
