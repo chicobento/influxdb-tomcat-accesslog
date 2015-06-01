@@ -1,0 +1,8 @@
+InfluxDB Tomcat Access Log
+
+This product includes software developed at
+The Apache Software Foundation (http://www.apache.org/).
+
+The org.apache.catalina.valves.InfluxDBAccessLogValve implementation
+is derivative work originating at the Apache Software Foundation.
+* Copyright 1999-2015 The Apache Software Foundation
